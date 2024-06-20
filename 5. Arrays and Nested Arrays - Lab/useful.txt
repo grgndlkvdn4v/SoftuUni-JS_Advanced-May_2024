@@ -1,0 +1,43 @@
+=== forEach ===
+да не се използва за модифицираме използваният масив! същото важи и за forof
+в такъв случай се използва .map()
+
+  array.forEach( (el, index) => {
+    console.log(el.toUpperCase);
+    console.log(index);
+  } );
+
+
+
+==================
+
+.map()
+ Използва се когато се налага да се създаде нов модифииран масив.
+Този метод очаква "return" във тялото фънкцията си.
+
+let newArr = arr.map( (el, index) => {
+  return el.toUpperCase
+});
+
+или краткият синтаксис:
+let newArr = arr.map( el => el.toUpperCase );
+
+==================
+
+.map() & forEach() са немутиращи методи, т.е. те не променят оригиналният масив !!!
+
+==================
+
+.some()
+има ли в масива елемент, който да отговаря на условието?
+връща boolean 
+
+let hasLetterF = arr.some( el => el.startsWith('F') );
+console.log(hasLetterF) // true | false
+
+или дългия синтаксис
+
+let hasCarWithT = cars.some( car => {
+  return car[0] === "T";
+})
+
