@@ -11,14 +11,12 @@ function addItem() {
     newAnchorElement.href = '#';
     newAnchorElement.textContent = '[Delete]'
     // Delete by target
-    newAnchorElement.addEventListener('click', (event) => {
-        event.target.parentElement.remove()
-    });
+    newAnchorElement.addEventListener('click', liDelete);
 
     // Delete by reference
-    // newAnchorElement.addEventListener('click', (event) => {
-    //     newLiElement.remove()
-    // });
+        // newAnchorElement.addEventListener('click', (event) => {
+        //     newLiElement.remove()
+        // });
 
     // Append the element to the UL
     newLiElement.append(newAnchorElement)
@@ -27,6 +25,10 @@ function addItem() {
     // Clear the input
     clearField(inputRef)
 
+
+    function liDelete(event) {
+        event.target.parentElement.remove();
+    }
 
     function clearField(field) {
         field.value = '';
