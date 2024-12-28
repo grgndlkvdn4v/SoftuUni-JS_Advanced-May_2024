@@ -1,0 +1,15 @@
+{
+  "name": "16.-unit-testing-and-error-handling---exercise",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "chai": "^5.1.2",
+    "mocha": "^11.0.1"
+  }
+}
