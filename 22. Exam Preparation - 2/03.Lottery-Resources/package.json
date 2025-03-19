@@ -1,0 +1,16 @@
+{
+  "name": "03.lottery-resources",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "Lottery.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^5.2.0",
+    "mocha": "^11.1.0"
+  }
+}
