@@ -7,7 +7,7 @@ const lottery = {
         ticketPrice <= 0 ||
         ticketCount < 1 ||
         typeof ticketPrice !== "number" ||
-        typeof ticketCount !== "number"||
+        typeof ticketCount !== "number" ||
         typeof buy !== "boolean"
       ) {
         throw new Error("Invalid input!");
@@ -17,7 +17,7 @@ const lottery = {
       }
     }
   },
- checkTicket(ticketNumbers, luckyNumbers) {
+  checkTicket(ticketNumbers, luckyNumbers) {
     if (
       !Array.isArray(ticketNumbers) ||
       !Array.isArray(luckyNumbers) ||
@@ -26,25 +26,24 @@ const lottery = {
     ) {
       throw new Error("Invalid input!");
     }
-  
+
     const uniqueTicketNumbers = ticketNumbers.filter(
       (number, index, array) => array.indexOf(number) === index
     );
     let winningNumbers = 0;
-  
+
     for (const number of uniqueTicketNumbers) {
       if (luckyNumbers.includes(number)) {
         winningNumbers++;
       }
     }
-  
+
     if (winningNumbers >= 3 && winningNumbers < 6) {
       return "Congratulations you win, check your reward!";
     } else if (winningNumbers === 6) {
       return "You win the JACKPOT!!!";
     }
-  }
-  ,
+  },
   secondChance(ticketID, secondChanceWinningIDs) {
     if (typeof ticketID !== "number" || !Array.isArray(secondChanceWinningIDs)) {
       throw new Error("Invalid input!");
@@ -58,4 +57,9 @@ const lottery = {
 };
 
 
-module.exports = lottery;
+console.log( lottery.checkTicket([1, 2, 3, 4, 5, 6], [1, 2, 7, 7, 8, 9]) );
+
+
+export {
+  lottery
+}
