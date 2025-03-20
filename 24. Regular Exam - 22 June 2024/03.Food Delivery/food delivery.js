@@ -63,3 +63,5 @@ const foodDelivery = {
     }
   },
 };
+
+export {foodDelivery}
