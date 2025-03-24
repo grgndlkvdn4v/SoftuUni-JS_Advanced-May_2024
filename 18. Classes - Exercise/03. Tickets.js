@@ -1,56 +1,36 @@
-function solve(tickets, sortCriteria) {
+function solve(ticketDescriptionsArr, sortingCriteria) {  let TicketsArr = [];
 
-  let ticketsList = [];
-
-  class Ticket {
-    constructor (destination, price, status) {
-      this.destination = destination,
-      this.price = Number(price),
-      this.status = status
-    }
-
-    static sortList(arr, sortCriteria) {
-      switch (sortCriteria) {
-        case 'price':
-          arr.sort((a,b) => a[sortCriteria] - b[sortCriteria])
-          break;
-      
-        default:
-          arr.sort((a,b) => a[sortCriteria].localeCompare(b[sortCriteria]) )
-          break;
+  for (const ticket of ticketDescriptionsArr) {
+    let [destination, price, status] = ticket.split('|')
+    
+    class Ticket {
+      constructor(destination, price, status) {
+        this.destination = destination,
+        this.price = Number(price),
+        this.status = status
       }
-      return arr
     }
+    
+    let ticketObj = new Ticket(destination, price, status)
+    TicketsArr.push(ticketObj);
   }
 
-  for (const ticket of tickets) {
-    let [destination, price, status] = ticket.split("|");
-    let currTicket = new Ticket(destination, price, status);
-    ticketsList.push(currTicket);
-  }
+  sortingCriteria !== 'price' ? 
+  TicketsArr.sort((a, b) => a[sortingCriteria].localeCompare(b[sortingCriteria])) :
+  TicketsArr.sort((a, b) => a[sortingCriteria] - b[sortingCriteria])
 
-  // switch (sortCriteria) {
-  //   case 'price':
-  //     ticketsList.sort((a,b) => a[sortCriteria] - b[sortCriteria])
-  //     break;
-  
-  //   default:
-  //     ticketsList.sort((a,b) => a[sortCriteria].localeCompare(b[sortCriteria]) )
-  //     break;
-  // }
-
-  Ticket.sortList(ticketsList, sortCriteria)
-  return ticketsList
+  return TicketsArr
 }
 
-let result = solve(
-  [
-    "Philadelphia|94.20|available",
-    "New York City|95.99|available",
-    "New York City|95.99|sold",
-    "Boston|126.20|departed",
-  ],  "destination"
-);
 
-console.table(result);
-
+console.table(
+  solve(
+    [
+      "Philadelphia|94.20|available",
+      "New York City|95.99|available",
+      "New York City|95.99|sold",
+      "Boston|126.20|departed",
+    ],
+    "destination"
+  )
+)
