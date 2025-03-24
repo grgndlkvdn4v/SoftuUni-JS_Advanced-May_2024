@@ -65,3 +65,5 @@ const foodDelivery = {
 };
 
 export {foodDelivery}
+
+console.log( foodDelivery.addMenuItem([{name: 'lighter', price: 11}], 10) );

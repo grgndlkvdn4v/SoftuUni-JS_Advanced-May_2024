@@ -2,7 +2,6 @@
   "name": "03.food-delivery",
   "version": "1.0.0",
   "type": "module",
-  "description": "",
   "main": "food delivery.js",
   "directories": {
     "test": "test"
@@ -12,6 +11,7 @@
   },
   "author": "",
   "license": "ISC",
+  "description": "",
   "dependencies": {
     "chai": "^5.2.0",
     "mocha": "^11.1.0"
